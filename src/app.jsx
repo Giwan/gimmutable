@@ -22,8 +22,8 @@ if (!global.Intl) {
         require('core-js');
         require('intl');
         require('intl/locale-data/jsonp/en.js');
-        React.render(<Main />, document.body);
+        React.render(<Main />, document.getElementById('app-container'));
     });
 } else {
-    React.render(<Main />, document.body);
+    React.render(<Main />, document.getElementById('app-container'));
 }
