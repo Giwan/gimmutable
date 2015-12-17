@@ -72,6 +72,7 @@ module.exports = {
     ],
   },
   resolve: {
+    root: __dirname,
     // alias directories to search for
     alias: {},
     modulesDirectories: ["node_modules", "images"],
