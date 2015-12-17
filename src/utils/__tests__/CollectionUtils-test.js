@@ -1,3 +1,4 @@
+'use strict'
 /*
  * Normally jest replaces the require fucntion and
  * creates a mock if the item being required.
@@ -9,13 +10,17 @@
  * jest.dontMock('../TweetUtils'); // This is a dependency of CollectionUtils
  * These are the two components we're looking to test here
  */
+
 jest.autoMockOff();
+const CollectionUtils = require('../CollectionUtils');
+
 
 /*
  * Test description and setup
  */
-describe('Collection  utilities module', function() {
-  var CollectionUtils = require('../CollectionUtils');
+describe('Collection  utilities module', () => {
+  // var CollectionUtils = require('../CollectionUtils');
+
 
   var collectionTweetsMock = {
     collectionTweet7: {},
