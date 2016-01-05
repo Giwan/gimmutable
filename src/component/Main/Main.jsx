@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Clicker from '../Clicker/Clicker';
 
 export default class Main extends Component {
   constructor(props) {
@@ -8,7 +9,8 @@ export default class Main extends Component {
   render () {
     return(
       <div>
-        hello
+        <h1>hello</h1>
+        <Clicker />
       </div>
     );
   }
