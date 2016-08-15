@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 export default class Clicker extends Component {
 
@@ -12,7 +12,7 @@ export default class Clicker extends Component {
 
   render () {
     return(
-      <button onClick={this.onClickerClick.bind(this)}>
+      <button className="btnClicker" onClick={this.onClickerClick.bind(this)}>
         {this.state.counter}
       </button>
     );

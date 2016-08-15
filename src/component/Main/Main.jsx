@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Clicker from '../Clicker/Clicker';
 
 export default class Main extends Component {
@@ -9,7 +9,7 @@ export default class Main extends Component {
   render () {
     return(
       <div>
-        <h1>hello</h1>
+        <h1>Hello {this.props.name}</h1>
         <Clicker />
       </div>
     );
