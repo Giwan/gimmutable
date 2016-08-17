@@ -1,31 +1,36 @@
 import React, { Component } from 'react';
-import Clicker from '../Clicker/Clicker';
 
 // Flux
-import ClickerAction from '../../action/ClickerAction'
-import ClickerStore from '../../store/ClickerStore'
+import LoginAction from '../../action/LoginAction'
+import LoginStore from '../../store/LoginStore'
 
 export default class Main extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      clickerIsOn: ClickerStore.isClickerOn(),
+      user: LoginStore.getUser(),
+      username: null,
+      password: null,
+      hipsterData: null,
     }
 
-    this.updateClickerState = this.updateClickerState.bind(this);
+    this.updateUser = this.updateUser.bind(this);
   }
 
   componentDidMount() {
-    ClickerStore.addChangeListener(this.updateClickerState);
+    LoginStore.addChangeListener(this.updateUser);
   }
 
   componentWillUnmount() {
-    ClickerStore.removeChangeListener(this.updateClickerState);
+    LoginStore.removeChangeListener(this.updateUser);
   }
 
-  updateClickerState() {
-    this.setState({ clickerIsOn: ClickerStore.isClickerOn() });
+  updateUser() {
+    this.setState({
+      user: LoginStore.getUser(),
+      hipsterData: LoginStore.getData(),
+    });
   }
 
   render () {
@@ -35,25 +40,60 @@ export default class Main extends Component {
 
         <div className="component" >
           <div>Main component</div>
-          <div>{ this.evaluateButtons() }</div>
+
+          <input
+            className="rInput"
+            type="text"
+            placeholder="username: demo"
+            onChange={(e)=> this.setState({username: e.currentTarget.value})} />
+
+          <input
+            className="rInput"
+            type="text"
+            placeholder="password: demo123"
+            onChange={(e)=> this.setState({password: e.currentTarget.value})} />
+
+        <div>
+          <button
+            className="rButton"
+            onClick={this.handleLogin.bind(this)}>
+            Login
+          </button>
+        </div>
+        <div>
+          <button
+            className="rButton"
+            onClick={()=> LoginAction.showAPI()}>
+            Get Hipster text
+          </button>
+        </div>
+        <hr />
+
+        { this.showReceivedData() }
+
       </div>
 
-        <Clicker />
       </div>
     );
   }
 
-  evaluateButtons() {
-    let clickerIsOn = this.state.clickerIsOn;
-    if (clickerIsOn) return (
-      <button onClick={ ()=> ClickerAction.disable() } >
-        disable clicker
-      </button>
-    );
-    else return (
-      <button onClick={()=> ClickerAction.enable() } >
-        enable clicker
-      </button>
-    );
+  handleLogin() {
+    let parameters = {
+      username: this.state.username,
+      password: this.state.password,
+    }
+
+    LoginAction.login(parameters);
+  }
+
+  showReceivedData() {
+    if (this.state.hipsterData) {
+      return <div className="hipsterText">{this.state.hipsterData.text}</div>;
+    }
   }
 }
+
+/*
+<div>{()=> {
+    if (this.state.hipsterData) return this.state.hipsterData.text; }}</div>
+*/

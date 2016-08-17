@@ -58,3 +58,29 @@ div.component {
     padding: 1em;
   }
 }
+
+input.rInput {
+  margin: 0.5em 0;
+  padding: 0.1em;
+  font-size: 1em;
+}
+
+button.rButton {
+  font-size: 1.2em;
+  padding: 0.1em;
+  border: 0;
+  background-color: $accentColor;
+  text-transform: uppercase;
+  color: $secondaryColor !important;
+  outline: none;
+  cursor: pointer;
+
+  &:active {
+    background-color: $secondaryColor;
+  }
+}
+
+.hipsterText {
+  color: $primaryColor;
+  text-align: left;
+}
