@@ -1,5 +1,6 @@
 
 module.exports = {
+  devtool: 'eval',
   context: __dirname + "/src",
   entry: {
     javascript: "./app.jsx",
