@@ -1,6 +1,6 @@
 
 module.exports = {
-  devtool: 'eval',
+  devtool: 'cheap-module-eval-source-map',
   context: __dirname + "/src",
   entry: {
     javascript: "./app.jsx",
