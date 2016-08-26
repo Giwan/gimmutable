@@ -75,7 +75,11 @@ module.exports = {
   resolve: {
     root: __dirname,
     // alias directories to search for
-    alias: {},
+    alias: {
+      Main: 'src/component/Main/Main',
+      Clicker: 'src/component/Clicker/Clicker',
+      style: 'src/style.scss'
+    },
     modulesDirectories: ["node_modules", "images"],
     // allows files to be required without extensions
     extensions: ["", ".js", ".jsx", ".json"]

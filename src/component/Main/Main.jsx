@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Clicker from '../Clicker/Clicker';
+import Clicker from 'Clicker';
 
 export default class Main extends Component {
   constructor(props) {

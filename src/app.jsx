@@ -4,10 +4,10 @@
  * Author: Giwan Persaud
  */
 
-import style from './style.scss'
+import style from 'style'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Main from './component/Main/Main.jsx'
+import Main from 'Main'
 
 ReactDOM.render(<Main />, document.getElementById('app-container'));
 // For demo
