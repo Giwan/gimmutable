@@ -74,7 +74,9 @@ module.exports = {
   resolve: {
     root: __dirname,
     // alias directories to search for
-    alias: {},
+    alias: {
+        "AppDispatcher": "dispatcher/AppDispatcher",
+    },
     modulesDirectories: ["node_modules", "images"],
     // allows files to be required without extensions
     extensions: ["", ".js", ".jsx", ".json"]
