@@ -76,6 +76,10 @@ module.exports = {
     // alias directories to search for
     alias: {
         "AppDispatcher": "dispatcher/AppDispatcher",
+        "Step5": "src/component/Step5/Step5",
+        "SubLOStore": "src/store/SubLOStore",
+        "SubLOConstant": "src/constant/SubLOConstant",
+        "SubLOAction": "src/action/SubLOAction",
     },
     modulesDirectories: ["node_modules", "images"],
     // allows files to be required without extensions
