@@ -21,7 +21,6 @@ export default class Step5 extends Component {
 
     onSubLoStoreUpdated() {
         const newOptions = SubLOStore.getOptions()
-        debugger;
         this.setState({
             options: newOptions,
         })
