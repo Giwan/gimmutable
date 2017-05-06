@@ -12,17 +12,19 @@ export default class Step5 extends Component {
     }
 
     componentDidMount() {
-        SubLOStore.addChangeListener(this.onSubLoStoreUpdated.bind(this))
+        SubLOStore.addListener(this.onSubLoStoreUpdated.bind(this))
     }
 
     componentWillUnmount() {
-        SubLOStore.removeChangeListener(this.onSubLoStoreUpdated.bind(this))
+        SubLOStore.removeListener(this.onSubLoStoreUpdated.bind(this))
     }
 
     onSubLoStoreUpdated() {
+        const newOptions = SubLOStore.getOptions()
+        debugger;
         this.setState({
-            options: SubLOStore.getOptions(),
-        });
+            options: newOptions,
+        })
     }
 
 
@@ -43,3 +45,20 @@ export default class Step5 extends Component {
         )
     }
 }
+
+
+/*
+
+return(
+    <div>
+        <h1>Step5</h1>
+        <button onClick={() => SubLOAction.getOptions()}>get options</button>
+        <div>
+            <select>
+                {options}
+            </select>
+        </div>
+    </div>
+)
+
+ */
