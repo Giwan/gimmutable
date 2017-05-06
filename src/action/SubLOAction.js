@@ -2,21 +2,25 @@ import AppDispatcher from '../dispatcher/AppDispatcher'
 import SubLOConstant from 'SubLOConstant'
 import axios from 'axios'
 
+const domain = `http://localhost:3001`
 const subLOAction = {
     getOptions() {
-        axios.get(`http://localhost:3001/options`)
-        .then( rsp => {
-            subLOAction.dispatchOptions(rsp.data)
-        })
+        axios.get(`${domain}/options`)
+        .then( rsp => AppDispatcher.dispatch({
+          type: SubLOConstant.OPTIONS_RECEIVED,
+          data: rsp.data
+        }))
         .catch( error => console.log(`error: `, error))
     },
 
-    dispatchOptions(options) {
-        AppDispatcher.dispatch({
-          type: SubLOConstant.OPTIONS_RECEIVED,
-          data: options
-        });
-    },
+    getSubLOs() {
+        axios.get(`${domain}/sublos`)
+        .then( rsp => AppDispatcher.dispatch({
+          type: SubLOConstant.SUBLOS_RECEIVED,
+          data: rsp.data
+        }))
+        .catch( error => console.log(`error: `, error))
+    }
 }
 
 module.exports = subLOAction;

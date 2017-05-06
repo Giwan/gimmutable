@@ -13,6 +13,7 @@ class SubLOStore extends ReduceStore {
 
     getInitialState() {
         return Immutable.fromJS({
+            "subLOs": [],
             "options": []
         })
     }
@@ -22,6 +23,9 @@ class SubLOStore extends ReduceStore {
 
             case SubLOConstant.OPTIONS_RECEIVED:
             return this.setOptions(state, action.data)
+
+            case SubLOConstant.SUBLOS_RECEIVED:
+            return this.setSubLOs(state, action.data)
 
             default:
             return state
@@ -35,11 +39,27 @@ class SubLOStore extends ReduceStore {
      * @param {[type]} data  [description]
      */
     setOptions(state, data) {
+        // const subLOs = state.get(`subLOs`).toJS()
+        // const currentSubLO = subLOs.find( item => item.uuid === data.sublo)
         return state.update("options", ()=> Immutable.fromJS(data))
     }
 
     getOptions() {
-        return this.getState().get(`options`).toJS();
+        return this.getState().get(`options`).toJS()
+    }
+
+    getOptionsForSubLO(sublo) {
+        const options = this.getState().get(`options`).toJS()
+        debugger
+        return options.filter( item => item.sublo === sublo)
+    }
+
+    setSubLOs(state, data) {
+        return state.update(`subLOs`, ()=> Immutable.fromJS(data))
+    }
+
+    getSubLOs() {
+        return this.getState().get(`subLOs`).toJS();
     }
 }
 
