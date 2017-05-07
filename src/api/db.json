@@ -1,0 +1,35 @@
+{
+  "options": [
+        {
+            "uuid": "98B5C748-657B-4E00-8B32-6F07C933694B",
+            "title": "option title from server",
+            "sublo": "EB0969D5-A189-487E-8F3B-B00EF9BE9B64"
+        },
+        {
+            "uuid": "98B5C748-657B-4E00-8B32-6F07C933614B",
+            "title": "option asdfasd title from server",
+            "sublo": "EB0969D5-A189-487E-8F3B-B00EF9BE9B64"
+        },
+        {
+            "uuid": "DC086A10-1105-40B2-B1F4-0474F4F6F523",
+            "title": "option 2 title from server",
+            "sublo": "EB0969D5-A189-487E-8F3B-B00EF9BE9B63"
+        },
+        {
+            "uuid": "DC086A10-1105-40B2-B1F4-0474F4F6F623",
+            "title": "option 2 title from server asdfasd",
+            "sublo": "EB0969D5-A189-487E-8F3B-B00EF9BE9B63"
+        }
+    ],
+
+    "sublos": [
+        {
+            "uuid": "EB0969D5-A189-487E-8F3B-B00EF9BE9B63",
+            "title": "sub lo 1"
+        },
+        {
+            "uuid": "EB0969D5-A189-487E-8F3B-B00EF9BE9B64",
+            "title": "sub lo 2"
+        }
+    ]
+}
