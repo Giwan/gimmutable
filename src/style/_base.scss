@@ -1,0 +1,56 @@
+body {
+    background-color: papayawhip;
+  text-align: center;
+}
+
+h1 {
+  color: $primaryColor;
+  text-align: center;
+  font-size: 5em;
+}
+
+button {
+    padding: 0.5em;
+    // margin: 5em;
+    outline: none;
+    border: 0;
+    background-color: $accentColor;
+    color: $secondaryColor;
+    cursor: pointer;
+    font-size: $normalFontSize;
+    display: inline-block;
+
+    &:hover {
+      box-shadow: 0 0 3px $shadowColor;
+    }
+
+    &:active {
+      box-shadow: 1px 1px 3px $shadowColor;
+      background-color: darken($accentColor, 10);
+    }
+
+    &:disabled, &[disabled]{
+        border: 1px solid $secondaryColor;
+        background-color: lighten($secondaryColor, 10%);
+        color: $primaryColor;
+
+        &:hover {
+            box-shadow: 0;
+        }
+    }
+}
+
+textarea {
+  width: 500px;
+  height: 200px;
+  padding: 20px;
+}
+
+select {
+  padding: 4px 20px;
+}
+
+option {
+  height: 30px;
+  padding: 5px 4px;
+}

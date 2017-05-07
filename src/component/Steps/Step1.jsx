@@ -41,6 +41,14 @@ export default class Step1 extends Component {
         return(
             <div>
                 <h1>Step1</h1>
+                <fieldset>
+                    <legend>title</legend>
+                    <input type="text" />
+                </fieldset>
+                <fieldset>
+                    <legend>description</legend>
+                    <textarea rows="3"></textarea>
+                </fieldset>
             </div>
         )
     }
