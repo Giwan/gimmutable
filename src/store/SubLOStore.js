@@ -50,7 +50,6 @@ class SubLOStore extends ReduceStore {
 
     getOptionsForSubLO(sublo) {
         const options = this.getState().get(`options`).toJS()
-        debugger
         return options.filter( item => item.sublo === sublo)
     }
 
