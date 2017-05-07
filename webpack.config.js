@@ -76,9 +76,14 @@ module.exports = {
     root: __dirname,
     // alias directories to search for
     alias: {
-      Main: 'src/component/Main/Main',
-      Clicker: 'src/component/Clicker/Clicker',
-      style: 'src/style.scss'
+        "Main": 'src/component/Main/Main',
+        "Clicker": 'src/component/Clicker/Clicker',
+        "style": 'src/style.scss',
+        "AppDispatcher": "dispatcher/AppDispatcher",
+        "Step5": "src/component/Step5/Step5",
+        "SubLOStore": "src/store/SubLOStore",
+        "SubLOConstant": "src/constant/SubLOConstant",
+        "SubLOAction": "src/action/SubLOAction",
     },
     modulesDirectories: ["node_modules", "images"],
     // allows files to be required without extensions

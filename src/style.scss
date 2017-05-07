@@ -23,14 +23,15 @@ h1 {
 }
 
 button.btnClicker {
-  padding: 2em;
-  margin: 5em;
+  padding: 1.3em;
+  // margin: 5em;
   outline: none;
   border: 0;
   background-color: $accentColor;
   color: $secondaryColor;
   cursor: pointer;
   font-size: $normalFontSize;
+  display: inline-block;
 
   &:hover {
     box-shadow: -10px 10px 30px $shadowColor;
@@ -40,4 +41,46 @@ button.btnClicker {
     box-shadow: 1px 1px 3px $shadowColor;
     background-color: darken($accentColor, 10);
   }
+}
+
+div.component {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  border: 1px solid $accentColor;
+  color: $secondaryColor;
+  margin: 1em;
+
+  :nth-child(1) {
+    border: 1px solid $accentColor;
+    color: $primaryColor;
+    margin: 1em;
+    padding: 1em;
+  }
+}
+
+input.rInput {
+  margin: 0.5em 0;
+  padding: 0.1em;
+  font-size: 1em;
+}
+
+button.rButton {
+  font-size: 1.2em;
+  padding: 0.1em;
+  border: 0;
+  background-color: $accentColor;
+  text-transform: uppercase;
+  color: $secondaryColor !important;
+  outline: none;
+  cursor: pointer;
+
+  &:active {
+    background-color: $secondaryColor;
+  }
+}
+
+.hipsterText {
+  color: $primaryColor;
+  text-align: left;
 }
