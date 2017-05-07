@@ -34,12 +34,22 @@ button {
     display: inline-block;
 
     &:hover {
-      box-shadow: -10px 10px 30px $shadowColor;
+      box-shadow: 0 0 3px $shadowColor;
     }
 
     &:active {
       box-shadow: 1px 1px 3px $shadowColor;
       background-color: darken($accentColor, 10);
+    }
+
+    &:disabled, &[disabled]{
+        border: 1px solid $secondaryColor;
+        background-color: lighten($secondaryColor, 10%);
+        color: $primaryColor;
+
+        &:hover {
+            box-shadow: 0;
+        }
     }
 }
 

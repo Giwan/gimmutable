@@ -1,5 +1,5 @@
 {
-  "name": "Gemplate",
+  "name": "Gimmutable",
   "private": true,
   "version": "1.0.0",
   "description": "React Template created by Giwan Persaud",
@@ -15,9 +15,8 @@
     "start": "webpack-dev-server --hot --inline --colors"
   },
   "keywords": [
-    "news",
-    "reader",
-    "language"
+    "immutable",
+    "react"
   ],
   "author": "Giwan Persaud",
   "license": "ISC",

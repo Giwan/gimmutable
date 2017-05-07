@@ -1,8 +1,6 @@
 import AppDispatcher from 'AppDispatcher'
-import { EventEmitter } from 'events'
-import assign from 'object-assign'
-import SubLOConstant from 'SubLOConstant'
 import Immutable from 'immutable'
+import SubLOConstant from 'SubLOConstant'
 import { ReduceStore } from 'flux/utils';
 
 class SubLOStore extends ReduceStore {
