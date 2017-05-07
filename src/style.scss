@@ -1,7 +1,7 @@
 
 $primaryColor: #F44336;
 $secondaryColor: #333333;
-$accentColor: #009688;
+$accentColor: #AAA;
 //Text and background colors
 
 $shadowColor: #111111;
@@ -12,6 +12,7 @@ $largeFont: ($normalFontSize * 1.2);
 $smallFontSize: ($normalFontSize * 0.8);
 
 body {
+    background-color: papayawhip;
   text-align: center;
 }
 
@@ -21,25 +22,25 @@ h1 {
   font-size: 5em;
 }
 
-button.btnClicker {
-  padding: 1.3em;
-  // margin: 5em;
-  outline: none;
-  border: 0;
-  background-color: $accentColor;
-  color: $secondaryColor;
-  cursor: pointer;
-  font-size: $normalFontSize;
-  display: inline-block;
+button {
+    padding: 0.5em;
+    // margin: 5em;
+    outline: none;
+    border: 0;
+    background-color: $accentColor;
+    color: $secondaryColor;
+    cursor: pointer;
+    font-size: $normalFontSize;
+    display: inline-block;
 
-  &:hover {
-    box-shadow: -10px 10px 30px $shadowColor;
-  }
+    &:hover {
+      box-shadow: -10px 10px 30px $shadowColor;
+    }
 
-  &:active {
-    box-shadow: 1px 1px 3px $shadowColor;
-    background-color: darken($accentColor, 10);
-  }
+    &:active {
+      box-shadow: 1px 1px 3px $shadowColor;
+      background-color: darken($accentColor, 10);
+    }
 }
 
 div.component {

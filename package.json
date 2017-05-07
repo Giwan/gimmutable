@@ -10,6 +10,7 @@
   "scripts": {
     "clean": "rm -rf dist/* ",
     "test": "jest",
+    "start-server": "json-server --watch src/api/db.json --port 3001",
     "prestart": "webpack",
     "start": "webpack-dev-server --hot --inline --colors"
   },
