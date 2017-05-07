@@ -79,8 +79,10 @@ module.exports = {
         "Main": 'src/component/Main/Main',
         "style": 'src/style.scss',
         "AppDispatcher": "src/dispatcher/AppDispatcher",
-        "Step5": "src/component/Steps/Step5",
         "Step1": "src/component/Steps/Step1",
+        "Step5": "src/component/Steps/Step5",
+        "StepsIndicator": "src/component/Steps/StepsIndicator",
+
         "SubLOStore": "src/store/SubLOStore",
         "StepsStore": "src/store/StepsStore",
         "SubLOConstant": "src/constant/SubLOConstant",
