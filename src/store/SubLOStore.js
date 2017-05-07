@@ -39,8 +39,6 @@ class SubLOStore extends ReduceStore {
      * @param {[type]} data  [description]
      */
     setOptions(state, data) {
-        // const subLOs = state.get(`subLOs`).toJS()
-        // const currentSubLO = subLOs.find( item => item.uuid === data.sublo)
         return state.update("options", ()=> Immutable.fromJS(data))
     }
 
@@ -48,6 +46,12 @@ class SubLOStore extends ReduceStore {
         return this.getState().get(`options`).toJS()
     }
 
+    /**
+     * For a given LO filter out the options from the array of options
+     * that are related to this LO
+     * @param  {Object} sublo The subLO for which we need the options
+     * @return {Array}        The array of options found
+     */
     getOptionsForSubLO(sublo) {
         const options = this.getState().get(`options`).toJS()
         return options.filter( item => item.sublo === sublo)

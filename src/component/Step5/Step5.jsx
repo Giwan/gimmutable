@@ -87,22 +87,3 @@ const ShowOptions = ({options}) => {
         {styledOptions}
     </div>
 }
-
-
-
-
-/*
-
-return(
-    <div>
-        <h1>Step5</h1>
-        <button onClick={() => SubLOAction.getOptions()}>get options</button>
-        <div>
-            <select>
-                {options}
-            </select>
-        </div>
-    </div>
-)
-
- */
