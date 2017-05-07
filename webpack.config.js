@@ -77,9 +77,8 @@ module.exports = {
     // alias directories to search for
     alias: {
         "Main": 'src/component/Main/Main',
-        "Clicker": 'src/component/Clicker/Clicker',
         "style": 'src/style.scss',
-        "AppDispatcher": "dispatcher/AppDispatcher",
+        "AppDispatcher": "src/dispatcher/AppDispatcher",
         "Step5": "src/component/Step5/Step5",
         "SubLOStore": "src/store/SubLOStore",
         "SubLOConstant": "src/constant/SubLOConstant",
