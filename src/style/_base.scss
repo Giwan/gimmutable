@@ -54,3 +54,11 @@ option {
   height: 30px;
   padding: 5px 4px;
 }
+
+fieldset {
+    border: none;
+}
+
+legend {
+    text-transform: capitalize;
+}

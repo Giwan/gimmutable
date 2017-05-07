@@ -9,6 +9,13 @@ const stepsAction = {
           data: step
         })
     },
+
+    nextStep() {
+        AppDispatcher.dispatch({
+          type: StepsConstant.NEXT_STEP,
+          data: null
+        })
+    }
 }
 
 module.exports = stepsAction;

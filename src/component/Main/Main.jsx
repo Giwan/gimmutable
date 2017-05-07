@@ -40,6 +40,7 @@ export default class Main extends Component {
         <div>
             <StepsIndicator />
             { this.showComponentForStep(this.state.currentStep) }
+            <button onClick={ StepsAction.nextStep }>Next</button>
       </div>
     )
   }

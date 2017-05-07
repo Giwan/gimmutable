@@ -23,6 +23,9 @@ class StepsStore extends ReduceStore {
             case StepsConstant.SET_STEP:
             return this.setStep(state, action.data)
 
+            case StepsConstant.NEXT_STEP:
+            return this.nextStep(state)
+
             default:
             return state
         }
@@ -30,6 +33,10 @@ class StepsStore extends ReduceStore {
 
     setStep(state, step) {
         return state.update("currentStep", () => step)
+    }
+
+    nextStep(state) {
+        return state.update("currentStep", step => (step < 4) ? step+1 : 0 )
     }
 
     getCurrentStep() {
