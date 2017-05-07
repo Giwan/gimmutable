@@ -43,11 +43,17 @@ export default class Step1 extends Component {
                 <h1>Step1</h1>
                 <fieldset>
                     <legend>title</legend>
-                    <input type="text" />
+                    <input
+                        name="title"
+                        type="text"
+                        onBlur={event => this.props.updateSubLO(event.currentTarget.name, event.currentTarget.value)} />
                 </fieldset>
                 <fieldset>
                     <legend>description</legend>
-                    <textarea rows="3"></textarea>
+                    <textarea
+                        rows="3"
+                        name="description"
+                        onBlur={event => this.props.updateSubLO(event.currentTarget.name, event.currentTarget.value)}></textarea>
                 </fieldset>
             </div>
         )

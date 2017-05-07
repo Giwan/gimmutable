@@ -20,6 +20,23 @@ const subLOAction = {
           data: rsp.data
         }))
         .catch( error => console.log(`error: `, error))
+    },
+
+    saveField(name, value) {
+        AppDispatcher.dispatch({
+          type: SubLOConstant.SAVE_FIELD,
+          data: {
+              name: name,
+              value: value
+          }
+        })
+    },
+
+    saveSubLO(subLO) {
+        AppDispatcher.dispatch({
+            type: SubLOConstant.SAVE_SUBLO,
+            data: subLO
+        })
     }
 }
 
