@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import Step1 from 'Step1'
+import Step2 from 'Step2'
+import Step3 from 'Step3'
+import Step4 from 'Step4'
 import Step5 from 'Step5'
 import StepsAction from 'StepsAction'
 import StepsStore from 'StepsStore'
@@ -9,61 +12,45 @@ import StepsIndicator from 'StepsIndicator'
 
 export default class Main extends Component {
   constructor(props) {
-    super(props);
+    super(props)
+
+    this.state = {
+        "currentStep": StepsStore.getCurrentStep()
+    }
+
+    this._stepStoreUpdated = this._stepStoreUpdated.bind(this)
+  }
+
+  componentDidMount() {
+      StepsStore.addListener(this._stepStoreUpdated)
+  }
+
+  componentWillUnmount() {
+      StepsStore.removeListener(this._stepStoreUpdated)
+  }
+
+  _stepStoreUpdated() {
+      this.setState({
+          "currentStep": StepsStore.getCurrentStep()
+      })
   }
 
   render () {
     return(
         <div>
             <StepsIndicator />
-            {/*
-            <Step1 />
-            <Step5 />
-            */}
-
+            { this.showComponentForStep(this.state.currentStep) }
       </div>
     )
   }
-}
 
-// class StepsIndicator extends Component {
-//     constructor(props) {
-//         super(props)
-//
-//         this.state = {
-//             "currentStep": StepsStore.getCurrentStep()
-//         }
-//     }
-//
-//     componentDidMount() {
-//         StepsStore.addListener(this.stepStoreUpdated.bind(this))
-//     }
-//
-//     componentWillUnmount() {
-//         StepsStore.removeListener(this.stepStoreUpdated.bind(this))
-//     }
-//
-//     stepStoreUpdated() {
-//         this.setState({
-//             "currentStep": StepsStore.getCurrentStep()
-//         })
-//     }
-//     render() {
-//         const steps = Array(`step`,`step`,`step`,`step`,`step`)
-//         const nodes = steps.map(
-//             (item, idx) => {
-//                 return <button
-//                         key={idx}
-//                         onClick={()=> StepsAction.setStep(idx)}
-//                         disabled={!!(idx === this.state.currentStep)}>
-//                         Step {idx+1}
-//                     </button>
-//             }
-//         )
-//         return(
-//             <div>
-//                 {nodes}
-//             </div>
-//         )
-//     }
-// }
+  showComponentForStep(step) {
+      switch(step) {
+          case 0: return <Step1 />
+          case 1: return <Step2 />
+          case 2: return <Step3 />
+          case 3: return <Step4 />
+          case 4: return <Step5 />
+      }
+  }
+}

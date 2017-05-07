@@ -13,7 +13,7 @@ class StepsStore extends ReduceStore {
     getInitialState() {
         return Immutable.fromJS({
             "steps": [],
-            "currentStep": 0
+            "currentStep": 1
         })
     }
 

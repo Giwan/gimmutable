@@ -10,17 +10,20 @@ export default class Step1 extends Component {
             options: SubLOStore.getOptions(),
             subLOs: SubLOStore.getSubLOs(),
         }
+
+        this._stores = [];
+        this._subLoStoreUpdated = this._subLoStoreUpdated.bind(this)
     }
 
     componentDidMount() {
-        SubLOStore.addListener(this.onSubLoStoreUpdated.bind(this))
+        this._stores.push(SubLOStore.addListener(this._subLoStoreUpdated))
     }
 
     componentWillUnmount() {
-        SubLOStore.removeListener(this.onSubLoStoreUpdated.bind(this))
+        this._stores.map( store => store.remove() )
     }
 
-    onSubLoStoreUpdated() {
+    _subLoStoreUpdated() {
         const newOptions = SubLOStore.getOptions()
         const subLOs = SubLOStore.getSubLOs()
         this.setState({

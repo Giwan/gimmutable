@@ -80,6 +80,9 @@ module.exports = {
         "style": 'src/style.scss',
         "AppDispatcher": "src/dispatcher/AppDispatcher",
         "Step1": "src/component/Steps/Step1",
+        "Step2": "src/component/Steps/Step2",
+        "Step3": "src/component/Steps/Step3",
+        "Step4": "src/component/Steps/Step4",
         "Step5": "src/component/Steps/Step5",
         "StepsIndicator": "src/component/Steps/StepsIndicator",
 

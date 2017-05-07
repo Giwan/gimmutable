@@ -11,15 +11,16 @@ export default class Step2 extends Component {
             subLOs: SubLOStore.getSubLOs(),
         }
 
+        this._stores = [];
         this.onSubLoStoreUpdated = this.onSubLoStoreUpdated.bind(this)
     }
 
     componentDidMount() {
-        SubLOStore.addListener(this.onSubLoStoreUpdated)
+        this._stores.push(SubLOStore.addListener(this.onSubLoStoreUpdated))
     }
 
     componentWillUnmount() {
-        // SubLOStore.removeListener(this.onSubLoStoreUpdated.bind(this))
+        this._stores.map( store => store.remove() )
     }
 
     onSubLoStoreUpdated() {
